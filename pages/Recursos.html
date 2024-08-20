@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGfit</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+<body>
+    <header>
+        <div class="header-container container d-flex justify-content-between align-items-center">
+            <a href="../index.html"><img src="../assets/img/logo.jpeg" alt="logo de la página" class="logo"></a>
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./Recursos.html">Recursos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./Programas.html">Programas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./Comunidad.html">Comunidad</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./Contacto.html">Contacto</a></li>
+                        <li class="nav-item"><button class="btn btn-success ml-3"><a href="./Contacto.html">Log In</a> </button></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="resources-section">
+            <h1>RECURSOS</h1>
+            <form action="">
+                <input type="search" name="search" id="search" placeholder="Buscar" class="interactive-search">
+            </form>
+        </section>
+        
+        <section class="videos-section">
+            <div class="video-container">
+                <div class="video-card">
+                    <video src="../assets/videos/VIDEO-2024-07-03-16-57-38.mov" controls class="responsive-video"></video>
+                    <h3>DUATLON</h3>
+                </div>
+                <div class="video-card">
+                    <video src="../assets/videos/VIDEO-2024-07-03-16-04-47 (1).mp4" controls class="responsive-video"></video>
+                    <h3>ENTRENAMIENTO DE BICEPS</h3>
+                    <div class="video-card">
+                        <video src="../assets/videos/VIDEO-2024-07-03-16-57-38.mov" controls class="responsive-video"></video>
+                        <h3>DUATLON</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="articles-section">
+            <h2>ARTÍCULOS</h2>
+            <div class="articles-container">
+                <article class="article-card">
+                    <div class="article-img">
+                        <img src="../assets/img/A_cover_image_for_a_scientific_fitness_article_tit.jpg" alt="Representación abstracta de células humanas conectadas, con colores vibrantes y líneas que simbolizan el impacto del ejercicio en la salud celular, sobre un fondo claro con un degradado sutil">
+                    </div>
+                    <div class="article-info">
+                        <h3>Why is exercise good for you? Scientists are finding answers in our cells</h3>
+                        <p>Explica cómo el ejercicio impacta positivamente las células del cuerpo, mejorando la salud y previniendo enfermedades</p>
+                        <button onclick="window.location.href='./pages/Cardio.html'"><a href="https://www.nature.com/articles/d41586-024-01200-7">Leer más</a></button>
+                    </div>
+                </article>
+                <article class="article-card">
+                    <div class="article-img">
+                        <img src="../assets/img/A_cover_image_for_a_fitness_article_titled_'Streng.jpg" alt="Figura muscular levantando pesas, con elementos adicionales como una columna vertebral resplandeciente, representando el fortalecimiento óseo, en un fondo dinámico con tonos oscuros y claros">
+                    </div>
+                    <div class="article-info">
+                        <h3>Strength training builds more than muscles</h3>
+                        <p> El entrenamiento de fuerza no solo aumenta la masa muscular, también fortalece los huesos</p>
+                        <button onclick="window.location.href='./pages/Cardio.html'"><a href="https://www.health.harvard.edu/staying-healthy/strength-training-builds-more-than-muscles">Leer más</a></button>
+                    </div>
+                </article>
+                <article class="article-card">
+                    <div class="article-img">
+                        <img src="../assets/img/A_cover_image_for_a_fitness_article_titled_'2024_T.jpg" alt="Silueta estilizada de un cuerpo humano con enfoque en la zona media, rodeada de iconos que simbolizan métodos de fitness como mancuernas, un corazón, una balanza y un símbolo de sueño, en un fondo moderno y brillante">
+                    </div>
+                    <div class="article-info">
+                        <h3>2024 Trends: Scientifically-Validated 8 Approaches for Losing Belly Fat</h3>
+                        <p>Este artículo presenta ocho métodos científicos para reducir la grasa abdominal, combinando ejercicio, balance hormonal y hábitos saludables.</p>
+                        <button onclick="window.location.href='./pages/Cardio.html'"><a href="https://blogs.ubc.ca/diet/2024/01/24/en-scientifically-validated-8-approaches-for-losing-belly-fat/">Leer más</a></button>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h4>Contactanos</h4>
+                <p>Dirección: 2525 Amenabar, CABA, Buenos Aires</p>
+                <p>Tel: (+54) 11 4456-7890</p>
+                <p>Email: agfit@gmail.com</p>
+            </div>
+            
+            <div class="social-media">
+                <h4>Síguenos</h4>
+                <a href="https://www.facebook.com" target="_blank">Facebook</a>
+                <a href="https://www.twitter.com" target="_blank">Twitter</a>
+                <a href="https://www.instagram.com" target="_blank">Instagram</a>
+            </div>
+            
+            <div class="newsletter">
+                <h4>Suscríbete</h4>
+                <form action="/subscribe" method="post">
+                    <input type="email" name="email" placeholder="Enter your email">
+                    <button type="submit">Suscríbete</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Your Company. All rights reserved.</p>
+            <p><a href="/terms">Terms and Conditions</a> | <a href="/privacy">Privacy Policy</a></p>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

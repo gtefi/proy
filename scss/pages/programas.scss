@@ -1,0 +1,224 @@
+/* Estilos Generales para la Página Programas */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #000; /* Fondo negro */
+  color: #fff; /* Texto blanco */
+}
+
+/* Encabezado de la Página de Programas */
+.programas-page .header {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent), url("../assets/img/programas-bg.jpg") center/cover no-repeat; /* Fondo con imagen y gradiente */
+  color: #fff;
+
+  h1 {
+    font-size: 3em;
+    font-family: "Anton", sans-serif;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra para hacer el texto más legible */
+  }
+
+  p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+  }
+}
+
+/* Contenedor de Video Principal */
+.programas-page .video-container {
+  position: relative;
+  margin: 20px auto;
+  width: 80%;
+  max-width: 800px;
+  background-color: #111;
+  border: 1px solid #333;
+  padding: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+
+  video {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .video-description {
+    text-align: left;
+    margin-top: 10px;
+  }
+}
+
+/* Sección de Entrenamientos */
+.programas-page .trainings-section {
+  margin-top: 40px;
+  text-align: center;
+
+  h2 {
+    color: #ffffff;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+
+  .trainings {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+
+    .training {
+      width: 180px;
+      background-color: #222;
+      padding: 15px;
+      border: 2px solid #acc02c;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 10px;
+        margin-bottom: 10px;
+      }
+
+      h3 {
+        font-size: 1.4em;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 1em;
+      }
+    }
+  }
+}
+
+/* Sección de Videos Adicionales */
+.programas-page .additional-videos {
+  margin-top: 40px;
+  text-align: center;
+
+  h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+
+  .videos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+
+    .video-item {
+      width: 300px;
+      background-color: #222;
+      padding: 15px;
+      border: 2px solid #acc02c;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+      }
+
+      video {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 10px;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 1em;
+        text-align: left;
+      }
+    }
+  }
+}
+
+/* Sección de Testimonios */
+.programas-page .testimonials {
+  margin-top: 40px;
+  text-align: center;
+
+  h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+
+  .testimonial-item {
+    width: 80%;
+    max-width: 600px;
+    background-color: #222;
+    padding: 20px;
+    border: 2px solid #acc02c;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin: 10px auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+    }
+
+    p {
+      font-size: 1.1em;
+    }
+  }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .programas-page .header {
+    padding: 40px 20px;
+
+    h1 {
+      font-size: 2.5em;
+    }
+
+    p {
+      font-size: 1em;
+    }
+  }
+
+  .programas-page .trainings,
+  .programas-page .videos {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .programas-page .training,
+  .programas-page .video-item {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .programas-page .header {
+    padding: 30px 15px;
+
+    h1 {
+      font-size: 2em;
+    }
+
+    p {
+      font-size: 0.9em;
+    }
+  }
+
+  .programas-page .trainings,
+  .programas-page .videos {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

@@ -1,0 +1,143 @@
+/* Estructura del Grid Principal */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  grid-template-areas: 
+    "section-principal section-principal"
+    "titulo-testimonio titulo-testimonio"
+    "section-testimonio1 section-testimonio2";
+  grid-gap: 0px;
+  padding: 20px;
+  background-color: #000; /* Fondo negro para la sección principal */
+}
+
+.section-principal {
+  grid-area: section-principal;
+  background-image: url("../assets/img/fitness para ti.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+  color: #fff;
+  height: 500px;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Oscurece la imagen de fondo */
+    z-index: 1;
+  }
+
+  h1, p {
+    position: relative;
+    z-index: 2;
+  }
+
+  h1 {
+    align-self: flex-start;
+    font-family: "Anton SC", sans-serif;
+    margin-bottom: 30px;
+  }
+
+  p {
+    font-size: 14px;
+    width: 50%;
+    align-self: flex-end;
+    max-width: 400px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid #fff;
+    border-radius: 10px;
+    margin-top: 20px;
+    line-height: 1.6;
+    color: #fff;
+  }
+}
+
+/* Sección de Testimonios */
+.titulo-testimonio,
+.section-testimonio1,
+.section-testimonio2 {
+  background-color: #fff;
+  color: #000;
+  padding: 20px;
+  font-family: "Anton SC", sans-serif;
+}
+
+.titulo-testimonio {
+  grid-area: titulo-testimonio;
+  text-align: center;
+  color: #000;
+}
+
+.section-testimonio1 {
+  grid-area: section-testimonio1;
+  font-family: "Anton SC", sans-serif;
+}
+
+.section-testimonio2 {
+  background-color: #acc02c;
+  grid-area: section-testimonio2;
+  font-family: "Anton SC", sans-serif;
+}
+
+.section-testimonio1 img, .section-testimonio2 img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-top: 10px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "section-principal"
+      "titulo-testimonio"
+      "section-testimonio1"
+      "section-testimonio2";
+  }
+
+  .section-principal {
+    height: 400px;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-principal {
+    height: 300px;
+
+    h1 {
+      font-size: 1.5em;
+    }
+
+    p {
+      font-size: 0.9em;
+      padding: 10px;
+    }
+  }
+
+  .navbar-nav {
+    text-align: center;
+
+    .nav-item {
+      .nav-link {
+        padding: 10px 15px;
+      }
+    }
+  }
+}

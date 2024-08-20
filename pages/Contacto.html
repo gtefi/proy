@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGfit</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+<body>
+    <header>
+        <div class="header-container container d-flex justify-content-between align-items-center">
+            <a href="../index.html"><img src="../assets/img/logo.jpeg" alt="logo de la página" class="logo"></a>
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./Recursos.html">Recursos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./Programas.html">Programas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./Comunidad.html">Comunidad</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+                        <li class="nav-item"><button class="btn btn-success ml-3"><a href="./Contacto.html">Log In</a> </button></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="contact">
+            <div class="contact-header">
+                <h2>PONTE EN CONTACTO</h2>
+                <h1>CONTACTO</h1>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>NOS ENCANTARÍA SABER DE TI!</h3>
+                    <p>En AGfit, creemos que la comunicación es clave para ofrecerte el mejor servicio posible. Ya sea que tengas preguntas sobre nuestros programas, necesites ayuda con tu cuenta, o simplemente quieras compartir tu experiencia con nosotros, estamos aquí para ayudarte. Completa el formulario a continuación o utiliza cualquiera de los métodos de contacto disponibles. ¡Esperamos tener noticias tuyas pronto!</p>
+                </div>
+                <form class="contact-form">
+                    <div class="form-row">
+                        <input type="text" name="name" placeholder="Name">
+                        <input type="email" name="email" placeholder="Email">
+                    </div>
+                    <div class="form-row">
+                        <input type="text" name="phone" placeholder="Phone">
+                        <input type="text" name="company" placeholder="Company">
+                    </div>
+                    <div class="form-row">
+                        <textarea name="message" placeholder="Message"></textarea>
+                    </div>
+                    <button type="submit" class="send-button">SEND MESSAGE</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h4>Contactanos</h4>
+                <p>Direccion: 2525 Amenabar, Caba, Buenos Aires</p>
+                <p>Tlf: (+54) 11 4456-7890</p>
+                <p>Email: agfit@gmail.com</p>
+            </div>
+            
+            <div class="social-media">
+                <h4>Siguenos</h4>
+                <a href="https://www.facebook.com" target="_blank">Facebook</a>
+                <a href="https://www.twitter.com" target="_blank">Twitter</a>
+                <a href="https://www.instagram.com" target="_blank">Instagram</a>
+            </div>
+            <div class="newsletter">
+                <h4>Suscribete</h4>
+                <form action="/subscribe" method="post">
+                    <input type="email" name="email" placeholder="Enter your email">
+                    <button type="submit">Suscribete</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Your Company. All rights reserved.</p>
+            <p><a href="/terms">Terms and Conditions</a> | <a href="/privacy">Privacy Policy</a></p>
+        </div>
+
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
