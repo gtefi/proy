@@ -1,39 +1,42 @@
+@import '../utils/variables';
+@import '../utils/mixins';
+
 /* Estilos Generales para la Página Programas */
 body {
-  font-family: "Arial", sans-serif;
-  background-color: #000; /* Fondo negro */
-  color: #fff; /* Texto blanco */
+  font-family: $font-secondary;
+  background-color: $background-color; /* Fondo negro */
+  color: $text-color; /* Texto blanco */
 }
 
 /* Encabezado de la Página de Programas */
 .programas-page .header {
   text-align: center;
-  padding: 60px 20px;
+  padding: $padding-large $padding-medium;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent), url("../assets/img/programas-bg.jpg") center/cover no-repeat; /* Fondo con imagen y gradiente */
-  color: #fff;
+  color: $text-color;
 
   h1 {
     font-size: 3em;
-    font-family: "Anton", sans-serif;
-    margin-bottom: 10px;
+    font-family: $font-primary;
+    margin-bottom: $margin-small;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra para hacer el texto más legible */
   }
 
   p {
     font-size: 1.2em;
-    margin-bottom: 30px;
+    margin-bottom: $margin-large;
   }
 }
 
 /* Contenedor de Video Principal */
 .programas-page .video-container {
   position: relative;
-  margin: 20px auto;
+  margin: $margin-medium auto;
   width: 80%;
   max-width: 800px;
-  background-color: #111;
-  border: 1px solid #333;
-  padding: 10px;
+  background-color: darken($background-color, 10%);
+  border: 1px solid darken($background-color, 30%);
+  padding: $padding-small;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
 
@@ -44,32 +47,31 @@ body {
 
   .video-description {
     text-align: left;
-    margin-top: 10px;
+    margin-top: $margin-small;
   }
 }
 
 /* Sección de Entrenamientos */
 .programas-page .trainings-section {
-  margin-top: 40px;
+  margin-top: $margin-large;
   text-align: center;
 
   h2 {
-    color: #ffffff;
+    color: $text-color;
     font-size: 2.5em;
-    margin-bottom: 20px;
+    margin-bottom: $margin-medium;
   }
 
   .trainings {
-    display: flex;
+    @include flex-center(row, center);
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    gap: $gap-medium;
 
     .training {
       width: 180px;
-      background-color: #222;
-      padding: 15px;
-      border: 2px solid #acc02c;
+      background-color: darken($background-color, 20%);
+      padding: $padding-small;
+      border: 2px solid $primary-color;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
       border-radius: 10px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -84,12 +86,12 @@ body {
         height: auto;
         display: block;
         border-radius: 10px;
-        margin-bottom: 10px;
+        margin-bottom: $margin-small;
       }
 
       h3 {
         font-size: 1.4em;
-        margin-bottom: 10px;
+        margin-bottom: $margin-small;
       }
 
       p {
@@ -101,25 +103,24 @@ body {
 
 /* Sección de Videos Adicionales */
 .programas-page .additional-videos {
-  margin-top: 40px;
+  margin-top: $margin-large;
   text-align: center;
 
   h2 {
     font-size: 2.5em;
-    margin-bottom: 20px;
+    margin-bottom: $margin-medium;
   }
 
   .videos {
-    display: flex;
+    @include flex-center(row, center);
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    gap: $gap-medium;
 
     .video-item {
       width: 300px;
-      background-color: #222;
-      padding: 15px;
-      border: 2px solid #acc02c;
+      background-color: darken($background-color, 20%);
+      padding: $padding-small;
+      border: 2px solid $primary-color;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
       border-radius: 10px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -134,7 +135,7 @@ body {
         height: auto;
         display: block;
         border-radius: 10px;
-        margin-bottom: 10px;
+        margin-bottom: $margin-small;
       }
 
       p {
@@ -147,20 +148,20 @@ body {
 
 /* Sección de Testimonios */
 .programas-page .testimonials {
-  margin-top: 40px;
+  margin-top: $margin-large;
   text-align: center;
 
   h2 {
     font-size: 2.5em;
-    margin-bottom: 20px;
+    margin-bottom: $margin-medium;
   }
 
   .testimonial-item {
     width: 80%;
     max-width: 600px;
-    background-color: #222;
-    padding: 20px;
-    border: 2px solid #acc02c;
+    background-color: darken($background-color, 20%);
+    padding: $padding-medium;
+    border: 2px solid $primary-color;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     margin: 10px auto;
@@ -178,9 +179,9 @@ body {
 }
 
 /* Media Queries */
-@media (max-width: 768px) {
+@include respond-to(tablet) {
   .programas-page .header {
-    padding: 40px 20px;
+    padding: $padding-medium;
 
     h1 {
       font-size: 2.5em;
@@ -203,9 +204,9 @@ body {
   }
 }
 
-@media (max-width: 576px) {
+@include respond-to(mobile) {
   .programas-page .header {
-    padding: 30px 15px;
+    padding: $padding-small;
 
     h1 {
       font-size: 2em;
@@ -220,5 +221,60 @@ body {
   .programas-page .videos {
     flex-direction: column;
     gap: 20px;
+  }
+}
+
+/* Ajustes Generales para la Sección de Entrenamientos y Videos */
+.programas-page .trainings-section, 
+.programas-page .additional-videos {
+  @include flex-center(column, center);
+  margin: 0 auto;
+  text-align: center;
+
+  .trainings, 
+  .videos {
+    @include flex-center(row, center);
+    flex-wrap: wrap;
+    gap: $gap-medium;
+    max-width: 100%;
+  }
+
+  .training, 
+  .video-item {
+    width: 100%;
+    max-width: 300px;
+    margin: $margin-small auto;
+  }
+}
+
+/* Ajustes Responsivos para Tablets */
+@include respond-to(tablet) {
+  .programas-page .trainings, 
+  .programas-page .videos {
+    flex-direction: column;
+    gap: $gap-medium;
+  }
+
+  .programas-page .training, 
+  .programas-page .video-item {
+    width: 90%;
+    max-width: 300px;
+    margin: $margin-small auto;
+  }
+}
+
+/* Ajustes Responsivos para Móviles */
+@include respond-to(mobile) {
+  .programas-page .trainings, 
+  .programas-page .videos {
+    flex-direction: column;
+    gap: $gap-medium;
+  }
+
+  .programas-page .training, 
+  .programas-page .video-item {
+    width: 100%;
+    max-width: 300px;
+    margin: $margin-small auto;
   }
 }

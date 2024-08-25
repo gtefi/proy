@@ -1,98 +1,94 @@
+// _responsive.scss
 
-@media (max-width: 768px) {
-    .header-container {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    .navbar {
-      flex-direction: column;
-      width: 100%;
-  
-      li {
-        margin: 10px 0;
-      }
-    }
-  
-    .contact-form {
-      flex-direction: column;
-    }
-  
-    .send-button {
-      align-self: center;
-      width: 100%;
-    }
-  
-    .footer-content {
-      flex-direction: column;
-      align-items: center;
+@import 'variables';
+@import 'mixins';
+
+/* Estilos Responsivos para Tablets */
+@include respond-to(tablet) {
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar {
+    flex-direction: column;
+    width: 100%;
+
+    li {
+      margin: $margin-small 0;
     }
   }
-  
-  @media (max-width: 576px) {
-    .home-header h1 {
-      font-size: 32px;
-    }
-  
-    .recursos-header h1,
-    .programas-header h1,
-    .contact-header h1 {
-      font-size: 28px;
-    }
-  
-    .comunidad h1 {
-      font-size: 28px;
+
+  .contact-form {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .send-button {
+    align-self: center;
+    width: 100%;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .grid {
+    grid-template-columns: 1fr; 
+    grid-template-areas:
+      "section-principal"
+      "titulo-testimonio"
+      "section-testimonio1"
+      "section-testimonio2";
+  }
+
+  .section-principal {
+    padding: $padding-medium;
+    height: auto;
+    background-position: center top; 
+    background-size: cover;
+  }
+
+  .video-container,
+  .training,
+  .video-item {
+    width: 100%;
+  }
+
+  .consultas .consulta,
+  .consultas .respuesta {
+    flex-direction: column; 
+    align-items: center;
+    text-align: center;
+
+    &::after {
+      display: none; 
     }
   }
-  @media (max-width: 768px) {
-    .grid {
-      grid-template-columns: 1fr; 
-      grid-template-areas:
-        "section-principal"
-        "titulo-testimonio"
-        "section-testimonio1"
-        "section-testimonio2";
-    }
-  
-    .section-principal {
-      padding: 20px;
-      height: auto; 
-    }
-  
-    .video-container,
-    .training,
-    .video-item {
-      width: 100%; 
-    }
-  
-    .consultas .consulta, .consultas .respuesta {
-      flex-direction: column; 
-      align-items: center;
-      text-align: center;
-  
-      &::after {
-        display: none; 
-      }
-    }
-  
-    .contact-content {
-      flex-direction: column; 
-      padding: 20px;
-    }
-  
-    .contact-info {
-      padding-right: 0;
-      margin-bottom: 20px;
-    }
-  
-    .contact-form {
-      max-width: 100%; 
-    }
+
+  .contact-content {
+    flex-direction: column; 
+    padding: $padding-medium;
   }
-  @media (max-width: 768px) {
-    .section-principal {
-      background-position: center top; 
-      background-size: cover;
-    }
+
+  .contact-info {
+    padding-right: 0;
+    margin-bottom: $margin-medium;
   }
-  
+}
+
+/* Estilos Responsivos para Móviles */
+@include respond-to(mobile) {
+  .home-header h1,
+  .recursos-header h1,
+  .programas-header h1,
+  .contact-header h1,
+  .comunidad h1 {
+    font-size: 28px;
+  }
+
+  .home-header h1 {
+    font-size: 32px;
+  }
+}

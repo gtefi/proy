@@ -1,54 +1,72 @@
+@import '../utils/variables';
+@import '../utils/mixins';
+
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-  }
-  
+  @include flex-center(row, space-between);
+  padding: $padding-small $padding-medium;
+  background-color: #000; /* Fondo negro */
+
   .navbar-logo {
-    position: relative;
+    .logo {
+      width: 700px; /* Ajusta este valor para aumentar el ancho del logo */
+      height: auto;
+      display: block;
+
+      @include respond-to(tablet) {
+        width: 130px; 
+      }
+
+      @include respond-to(mobile) {
+        width: 120px;
+      }
+    }
   }
-  
+
+  .navbar-nav {
+    .nav-link {
+      color: #fff;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $primary-color; 
+      }
+    }
+  }
+
   .hamburger-menu {
     display: none;
     position: absolute;
-    right: 2rem;
-  }
-  
-  @media (max-width: 768px) {
-    .navbar {
-      justify-content: center;
-    }
-  
-    .navbar-logo {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-  
-    .hamburger-menu {
+    right: $padding-medium;
+    top: $padding-small; /* Asegura que esté en la parte superior */
+
+    @include respond-to(tablet) {
       display: block;
     }
-  
+
+    @include respond-to(mobile) {
+      display: block;
+    }
+  }
+
+  // Mantener el logo en la izquierda y el menú hamburguesa en la derecha
+  @include respond-to(tablet) {
+    justify-content: space-between;
+
+    .navbar-logo {
+      position: absolute;
+      left: $padding-medium; /* Asegura que esté alineado a la izquierda */
+      top: $padding-small; /* Asegura que esté en la parte superior */
+      transform: none; /* Elimina cualquier transformación previa */
+    }
+
     .navbar-menu {
       display: none;
+
+      &.open {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
     }
-  
-    .hamburger-menu.open + .navbar-menu {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
   }
-  .navbar {
-    background-color: #000; /* Fondo negro */
-  }
-  
-  .navbar-nav .nav-link {
-    color: #fff; /* Texto blanco */
-  }
-  
-  .navbar-nav .nav-link:hover {
-    color: #acc02c; /* Color de hover */
-  }
-  
+}

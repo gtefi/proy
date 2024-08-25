@@ -1,0 +1,33 @@
+// _variables.scss
+
+// Color Variables
+$primary-color: #acc02c;
+$secondary-color: #8aa020;
+$background-color: #000000;
+$text-color: #ffffff;
+$border-color: #333;
+$hover-color: lighten($primary-color, 10%);
+
+// Font Variables
+$font-primary: 'Anton', sans-serif;
+$font-secondary: 'Poppins';
+
+// Font Sizes
+$font-size-large: 2.5em;
+$font-size-medium: 1.5em;
+$font-size-small: 1em;
+
+// Spacing
+$padding-small: 10px;
+$padding-medium: 20px;
+$padding-large: 30px;
+$margin-small: 10px;
+$margin-medium: 20px;
+$margin-large: 30px;
+
+// Breakpoints
+$breakpoint-mobile: 425px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+$gap-small: 10px;
+$gap-medium: 20px; 

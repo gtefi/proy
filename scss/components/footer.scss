@@ -1,90 +1,111 @@
+@import '../utils/variables';
+@import '../utils/mixins';
+
 footer {
-    background-color: #2c2c2c;
-    color: white;
-    padding: 40px 20px;
-  
-    .footer-content {
+  background-color: $border-color;
+  color: $text-color;
+  padding: $padding-large $padding-medium;
+
+  .footer-content {
+    @include flex-center(row, space-between);
+    flex-wrap: wrap;
+    margin-bottom: $margin-medium;
+
+    > div {
+      flex: 1;
+      margin: $margin-small;
+    }
+
+    h4 {
+      font-size: 18px;
+      margin-bottom: $margin-small;
+    }
+
+    p,
+    a {
+      font-size: 14px;
+      line-height: 1.6;
+      color: lighten($text-color, 20%);
+    }
+
+    a {
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+
+  .newsletter {
+    form {
       display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      margin-bottom: 20px;
-  
-      > div {
+      flex-direction: row;
+      align-items: center;
+      width: 100%;
+
+      input[type="email"] {
         flex: 1;
-        margin: 10px;
-      }
-  
-      h4 {
-        font-size: 18px;
-        margin-bottom: 10px;
-      }
-  
-      p,
-      a {
+        padding: $padding-small;
+        margin-right: $margin-small;
+        border: none;
+        border-radius: 5px;
         font-size: 14px;
-        line-height: 1.6;
-        color: #bdbdbd;
-      }
-  
-      a {
-        text-decoration: none;
-        transition: color 0.3s ease;
-  
-        &:hover {
-          color: #acc02c;
+        background-color:$text-color;
+        color: $text-color;
+
+        &:focus {
+          outline: 2px solid $primary-color;
+          outline-offset: 2px;
         }
       }
-    }
-  
-    .newsletter {
-      form {
-        display: flex;
+
+      button {
+        padding: $padding-small $padding-medium;
+        border: none;
+        border-radius: 5px;
+        background-color: $primary-color;
+        color: $text-color;
+        font-size: 14px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: $secondary-color;
+        }
+      }
+
+      @include respond-to(mobile) {
         flex-direction: column;
-  
+        align-items: stretch;
+
         input[type="email"] {
-          padding: 10px;
-          margin-bottom: 10px;
-          border: none;
-          border-radius: 5px;
-          font-size: 14px;
-        }
-  
-        button {
-          padding: 10px;
-          border: none;
-          border-radius: 5px;
-          background-color: #acc02c;
-          color: white;
-          font-size: 14px;
-          cursor: pointer;
-          transition: background-color 0.3s ease;
-  
-          &:hover {
-            background-color: #8aa020;
-          }
-        }
-      }
-    }
-  
-    .footer-bottom {
-      text-align: center;
-      border-top: 1px solid #3d3d3d;
-      padding-top: 20px;
-  
-      p {
-        margin: 5px 0;
-        font-size: 12px;
-      }
-  
-      a {
-        color: #bdbdbd;
-        text-decoration: none;
-        transition: color 0.3s ease;
-  
-        &:hover {
-          color: #ffffff;
+          margin-right: 0;
+          margin-bottom: $margin-small;
         }
       }
     }
   }
-  
+
+  .footer-bottom {
+    text-align: center;
+    border-top: 1px solid lighten($background-color, 10%);
+    padding-top: $padding-medium;
+
+    p {
+      margin: 5px 0;
+      font-size: 12px;
+    }
+
+    a {
+      color: lighten($text-color, 20%);
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $text-color;
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+// _base.scss
+
+@import '../utils/variables';
+@import '../utils/mixins';
+
+body {
+  font-family: $font-secondary;
+  background-color: $background-color;
+  color: $text-color;
+}

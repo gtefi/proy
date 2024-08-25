@@ -1,116 +1,126 @@
+@import '../utils/variables';
+@import '../utils/mixins';
 
 .resources-section {
-    text-align: center;
-    margin: 20px 0;
-    color: white;
-    font-family: "Anton SC", sans-serif;
-    
-  
-    .interactive-search {
-      padding: 10px;
-      border: 2px solid white;
-      border-radius: 5px;
-      width: 80%;
-      max-width: 500px;
-      margin: 10px 0;
-      font-size: 16px;
+  text-align: center;
+  margin: $margin-medium 0;
+  color: $text-color;
+  font-family: $font-primary;
+
+  .interactive-search {
+    padding: $padding-small;
+    border: 2px solid $text-color;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 500px;
+    margin: $margin-small 0;
+    font-size: 16px;
+    background-color: transparent;
+    color: $text-color;
+
+    &:focus {
+      outline: none;
+      border-color: $primary-color;
+    }
+  }
+}
+
+// Estilos adicionales para las secciones de videos y artículos
+.videos-section,
+.articles-section {
+  text-align: center;
+  margin: $margin-medium 0;
+  color: $text-color;
+
+  .video-container,
+  .articles-container {
+    @include flex-center(row, center);
+    flex-wrap: wrap;
+    gap: $gap-medium;
+
+    .video-card,
+    .article-card {
       background-color: transparent;
-      color: white;
-  
-      &:focus {
-        outline: none;
-        border-color: #acc02c;
+      border-radius: 0.5px;
+      padding: $padding-small;
+      color: $text-color;
+      width: 300px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 16px rgba($text-color, 0.2);
       }
-    }
-  }
-  
-  // Estilos adicionales para las secciones de videos y artículos
-  .videos-section,
-  .articles-section {
-    text-align: center;
-    margin: 20px 0;
-    color: white;
-  
-    .video-container,
-    .articles-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-  
-      .video-card,
-      .article-card {
-        background-color: transparent;
+
+      .responsive-video {
+        width: 100%;
         border-radius: 0.5px;
-        padding: 10px;
-        color: white;
-        width: 300px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
-        &:hover {
-          transform: translateY(-px);
-          box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+        margin-bottom: $margin-small;
+      }
+
+      .article-img img {
+        border-radius: 10px;
+      }
+
+      .article-info {
+        h3 {
+          color: $text-color;
+          margin: $margin-small 0;
+          font-family: $font-primary;
         }
-  
-        .responsive-video {
-          width: 100%;
-          border-radius: 0.5px;
-          margin-bottom: 10px;
+
+        p {
+          font-size: 14px;
+          color: $text-color;
+          margin-bottom: $margin-small;
         }
-  
-        .article-img img {
-          border-radius: 10px;
-        }
-  
-        .article-info {
-          h3 {
-            color: white;
-            margin: 10px 0;
-            font-family: "Anton SC", sans-serif;
-          }
-  
-          p {
-            font-size: 14px;
-            color: white;
-            margin-bottom: 10px;
-            
-          }
-  
-          button {
-            background-color: white;
-            color: black;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-  
-            &:hover {
-              background-color: #acc02c;
-              color: white;
-            }
+
+        button {
+          background-color: $text-color;
+          color: $background-color;
+          border: none;
+          padding: $padding-small $padding-medium;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background-color: $primary-color;
+            color: $text-color;
           }
         }
       }
     }
   }
-  
-  // Margin between articles and footer
+}
+
+// Margin between articles and footer
+.articles-section {
+  margin-bottom: $margin-large;
+}
+
+// Ajustes de Ancho para Videos y Artículos
+.videos-section, 
+.articles-section {
+  .video-card, 
+  .article-card {
+    width: 100%; 
+    max-width: 500px; 
+  }
+}
+
+// Media Queries
+@include respond-to(tablet) {
+  .videos-section, 
   .articles-section {
-    margin-bottom: 40px;
-  }
-  .videos-section, .articles-section {
-    .video-card, .article-card {
+    .video-card, 
+    .article-card {
       width: 100%; 
-      max-width: 500px; 
     }
   }
-  
-  @media (max-width: 768px) {
-    .videos-section, .articles-section {
-      .video-card, .article-card {
-        width: 100%; 
-      }
-    }
-  }
-  
+}
+
+h1, h2 {
+  font-family: $font-primary;
+  color: $border-color;
+}
